@@ -195,7 +195,7 @@ def registerInternalRouters(app):
     @auth.login_required
     def deleteDatabase():
         return jsonify({
-            "status": False})
+            "status": collection.truncate()})
 
     @fp.after_request
     def x_robots_tag_header(response):
