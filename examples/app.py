@@ -1,7 +1,4 @@
 # your app.py
-import sys
-sys.path.insert(0,'..')
-
 from flask import Flask
 import flask_profiler
 
