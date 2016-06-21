@@ -8,7 +8,7 @@ from pprint import pprint as pp
 from flask import Blueprint
 from flask import jsonify
 from flask import request
-from flask.ext.httpauth import HTTPBasicAuth
+from flask_httpauth import HTTPBasicAuth
 
 from . import storage
 
@@ -80,8 +80,8 @@ def measure(f, name, method, context=None):
 
         try:
             returnVal = f(*args, **kwargs)
-        except Exception as e:
-            raise e
+        except:
+            raise
         finally:
             measurement.stop()
             if CONF.get("verbose", False):
