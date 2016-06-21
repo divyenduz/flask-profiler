@@ -20,5 +20,6 @@ $(document).on('ready', function () {
 
     $('#clear-settings-info').click(function (e) {
         $('#settings-info').html("");
+        $('#clear-settings-info').hide();
     });
 });

@@ -194,8 +194,9 @@ def registerInternalRouters(app):
     @fp.route("/db/deleteDatabase")
     @auth.login_required
     def deleteDatabase():
-        return jsonify({
+        response = jsonify({
             "status": collection.truncate()})
+        return response
 
     @fp.after_request
     def x_robots_tag_header(response):

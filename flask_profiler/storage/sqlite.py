@@ -239,7 +239,8 @@ class Sqlite(BaseStorage):
 
     def truncate(self):
         self.cursor.execute("DELETE FROM {}".format(self.table_name))
-        return self.connection.commit()
+        self.connection.commit()
+        return True if self.cursor.rowcount else False
 
     def delete(self, measurementId):
         self.cursor.execute(
