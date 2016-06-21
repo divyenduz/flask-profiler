@@ -2,7 +2,7 @@ $(document).on('ready', function () {
     $('#clear-settings-info').hide();
 
     $('.dump-database').click(function (e) {
-        console.log("1");
+        window.location = 'db/dumpDatabase';
     });
 
     $('.delete-database').click(function (e) {

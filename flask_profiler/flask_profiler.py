@@ -191,6 +191,14 @@ def registerInternalRouters(app):
         return jsonify({
             "distribution": collection.getMethodDistribution(args)})
 
+    @fp.route("/db/dumpDatabase")
+    @auth.login_required
+    def dumpDatabase():
+        response = jsonify({
+            "summary": collection.getSummary()})
+        response.headers["Content-Disposition"] = "attachment; filename=dump.json"
+        return response
+
     @fp.route("/db/deleteDatabase")
     @auth.login_required
     def deleteDatabase():
